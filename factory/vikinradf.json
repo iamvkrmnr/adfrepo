@@ -1,0 +1,9 @@
+{
+	"name": "vikinradf",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "3a3967cb-c8b8-40ba-a614-4ffbe7602df0",
+		"tenantId": "c36746a7-3fdb-4959-a4d1-1e815e421d8b"
+	}
+}
