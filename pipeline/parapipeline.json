@@ -142,7 +142,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DelimitedText3",
+						"referenceName": "para_dataset",
 						"type": "DatasetReference",
 						"parameters": {
 							"ds_filesystem": {
@@ -151,6 +151,10 @@
 							},
 							"ds_directory": {
 								"value": "@pipeline().parameters.pp_directory_out",
+								"type": "Expression"
+							},
+							"ds_file_name": {
+								"value": "@pipeline().parameters.pp_file_name",
 								"type": "Expression"
 							}
 						}
