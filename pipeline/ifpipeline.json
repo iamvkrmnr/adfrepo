@@ -41,6 +41,7 @@
 					],
 					"storeSettings": {
 						"type": "AzureBlobFSReadSettings",
+						"recursive": true,
 						"enablePartitionDiscovery": false
 					},
 					"formatSettings": {
@@ -68,7 +69,7 @@
 					"isSequential": true,
 					"activities": [
 						{
-							"name": "If Condition1",
+							"name": "check csv or txt",
 							"type": "IfCondition",
 							"dependsOn": [],
 							"userProperties": [],
@@ -195,6 +196,14 @@
 												"parameters": {
 													"ds_filesystem": {
 														"value": "@pipeline().parameters.pp_file_system",
+														"type": "Expression"
+													},
+													"ds_directory": {
+														"value": "@pipeline().parameters.pp_directory_out_txt",
+														"type": "Expression"
+													},
+													"ds_file_name": {
+														"value": "@pipeline().parameters.pp_file_name",
 														"type": "Expression"
 													}
 												}
