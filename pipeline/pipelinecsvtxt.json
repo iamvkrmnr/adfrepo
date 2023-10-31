@@ -1,0 +1,46 @@
+{
+	"name": "pipelinecsvtxt",
+	"properties": {
+		"activities": [
+			{
+				"name": "Get Metadata1",
+				"type": "GetMetadata",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataset": {
+						"referenceName": "DelimitedText4",
+						"type": "DatasetReference"
+					},
+					"fieldList": [],
+					"storeSettings": {
+						"type": "AzureBlobFSReadSettings",
+						"enablePartitionDiscovery": false
+					},
+					"formatSettings": {
+						"type": "DelimitedTextReadSettings"
+					}
+				}
+			}
+		],
+		"parameters": {
+			"pp_file_system": {
+				"type": "string"
+			},
+			"pp_directory_in": {
+				"type": "string"
+			},
+			"pp_file_name": {
+				"type": "string"
+			}
+		},
+		"annotations": []
+	}
+}
