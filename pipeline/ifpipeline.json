@@ -1,5 +1,5 @@
 {
-	"name": "pipelinecsvtxt",
+	"name": "ifpipeline",
 	"properties": {
 		"activities": [
 			{
@@ -17,7 +17,21 @@
 				"typeProperties": {
 					"dataset": {
 						"referenceName": "DelimitedText4",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"ds_file_system": {
+								"value": "@pipeline().parameters.pp_file_system",
+								"type": "Expression"
+							},
+							"ds_directory_in": {
+								"value": "@pipeline().parameters.pp_directory_in",
+								"type": "Expression"
+							},
+							"ds_file_name": {
+								"value": "@pipeline().parameters.pp_file_name",
+								"type": "Expression"
+							}
+						}
 					},
 					"fieldList": [],
 					"storeSettings": {
@@ -27,6 +41,57 @@
 					"formatSettings": {
 						"type": "DelimitedTextReadSettings"
 					}
+				}
+			},
+			{
+				"name": "ForEach1",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "Get Metadata1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"activities": [
+						{
+							"name": "If Condition1",
+							"type": "IfCondition",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"expression": {
+									"value": "@endswith(item().name,'txt')",
+									"type": "Expression"
+								},
+								"ifFalseActivities": [
+									{
+										"name": "Falsewait",
+										"type": "Wait",
+										"dependsOn": [],
+										"userProperties": [],
+										"typeProperties": {
+											"waitTimeInSeconds": 1
+										}
+									}
+								],
+								"ifTrueActivities": [
+									{
+										"name": "Wait1",
+										"type": "Wait",
+										"dependsOn": [],
+										"userProperties": [],
+										"typeProperties": {
+											"waitTimeInSeconds": 2
+										}
+									}
+								]
+							}
+						}
+					]
 				}
 			}
 		],
