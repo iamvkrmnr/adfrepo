@@ -182,7 +182,7 @@
 				]
 			},
 			{
-				"name": "Delete1",
+				"name": "Delete from output",
 				"type": "Delete",
 				"dependsOn": [
 					{
