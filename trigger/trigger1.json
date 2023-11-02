@@ -3,13 +3,21 @@
 	"properties": {
 		"annotations": [],
 		"runtimeState": "Started",
-		"pipelines": [],
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "firstpipeline",
+					"type": "PipelineReference"
+				}
+			}
+		],
 		"type": "ScheduleTrigger",
 		"typeProperties": {
 			"recurrence": {
 				"frequency": "Day",
 				"interval": 1,
-				"startTime": "2023-11-03T21:13:00",
+				"startTime": "2023-11-04T22:24:00",
+				"endTime": "2023-11-05T16:52:07",
 				"timeZone": "India Standard Time"
 			}
 		}
