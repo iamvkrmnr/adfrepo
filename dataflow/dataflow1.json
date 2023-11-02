@@ -14,6 +14,10 @@
 			],
 			"sinks": [
 				{
+					"dataset": {
+						"referenceName": "DelimitedText5",
+						"type": "DatasetReference"
+					},
 					"name": "sink1"
 				}
 			],
@@ -34,9 +38,15 @@
 				"     ignoreNoFilesFound: false) ~> source1",
 				"source1 select(skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> select1",
-				"select1 filter(ERROR_FUNCTION('')) ~> filter1",
+				"select1 filter({ProductID     Name     ProductNumber     Color     StandardCost     ListPrice     Size     Weight     ProductCategoryID     ProductModelID     SellStartDate     SellEndDate     DiscontinuedDate     ThumbNailPhoto     ThumbnailPhotoFileName     rowguid     ModifiedDate}) ~> filter1",
 				"filter1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
+				"     input(",
+				"          {ProductID     Name     ProductNumber     Color     StandardCost     ListPrice     Size     Weight     ProductCategoryID     ProductModelID     SellStartDate     SellEndDate     DiscontinuedDate     ThumbNailPhoto     ThumbnailPhotoFileName     rowguid     ModifiedDate} as string",
+				"     ),",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> sink1"
 			]
