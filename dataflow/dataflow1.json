@@ -31,7 +31,7 @@
 			],
 			"scriptLines": [
 				"source(output(",
-				"          {ProductID     Name     ProductNumber     Color     StandardCost     ListPrice     Size     Weight     ProductCategoryID     ProductModelID     SellStartDate     SellEndDate     DiscontinuedDate     ThumbNailPhoto     ThumbnailPhotoFileName     rowguid     ModifiedDate} as string",
+				"          {ProductID     Name     ProductNumber     Color     StandardCost     ListPrice     Size     Weight     ProductCategoryID     ProductModelID     SellStartDate     SellEndDate     DiscontinuedDate     ThumbNailPhoto     ThumbnailPhotoFileName     rowguid     ModifiedDate} as integer",
 				"     ),",
 				"     allowSchemaDrift: false,",
 				"     validateSchema: false,",
