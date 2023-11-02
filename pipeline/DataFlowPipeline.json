@@ -65,7 +65,7 @@
 						"parameters": {
 							"ds_filesystem": "proj-container",
 							"ds_directory": "project/output",
-							"ds_file_name": "SalesLTProduct..csv"
+							"ds_file_name": "SalesLTProduct.csv"
 						}
 					}
 				]
