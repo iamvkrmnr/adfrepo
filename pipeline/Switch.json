@@ -212,8 +212,7 @@
 														"type": "DatasetReference",
 														"parameters": {
 															"ds_filesystem": "proj-container",
-															"ds_directory": "project/output",
-															"ds_file_name": "project/output/csv folder"
+															"ds_directory": "project/output/csv folder"
 														}
 													}
 												]
