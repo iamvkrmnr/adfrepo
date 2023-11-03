@@ -67,7 +67,7 @@
 					"isSequential": true,
 					"activities": [
 						{
-							"name": "Switch1",
+							"name": "Switch",
 							"type": "Switch",
 							"dependsOn": [],
 							"userProperties": [],
@@ -271,8 +271,15 @@
 												"referenceName": "para_dataset",
 												"type": "DatasetReference",
 												"parameters": {
-													"ds_filesystem": "proj-container",
-													"ds_directory": "project/input"
+													"ds_filesystem": {
+														"value": "@pipeline().parameters.pp_file_system",
+														"type": "Expression"
+													},
+													"ds_directory": {
+														"value": "@pipeline().parameters.pp_directory_in",
+														"type": "Expression"
+													},
+													"ds_file_name": "@item().name"
 												}
 											}
 										],
@@ -281,8 +288,18 @@
 												"referenceName": "para_dataset",
 												"type": "DatasetReference",
 												"parameters": {
-													"ds_filesystem": "proj-container",
-													"ds_directory": "project/output/Other folder"
+													"ds_filesystem": {
+														"value": "@pipeline().parameters.pp_file_system",
+														"type": "Expression"
+													},
+													"ds_directory": {
+														"value": "@pipeline().parameters.pp_directory_out_txt",
+														"type": "Expression"
+													},
+													"ds_file_name": {
+														"value": "@pipeline().parameters.pp_file_name",
+														"type": "Expression"
+													}
 												}
 											}
 										]
