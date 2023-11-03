@@ -17,6 +17,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
+						"sqlReaderQuery": "SELECT ProductID, Name ,Color,Weight \nFROM [SalesLT].[Product]\nwhere Color = 'Black' OR Color = 'Red';\n",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
