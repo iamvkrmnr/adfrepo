@@ -41,7 +41,7 @@
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> select1",
-				"select1 filter({} >100) ~> filter1",
+				"select1 filter(ERROR_FUNCTION('{ProductID     Name     ProductNumber     Color     StandardCost     ListPrice     Size     Weight     ProductCategoryID     ProductModelID     SellStartDate     SellEndDate     DiscontinuedDate     ThumbNailPhoto     ThumbnailPhotoFileName     rowguid     ModifiedDate}{} > 100')) ~> filter1",
 				"filter1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
