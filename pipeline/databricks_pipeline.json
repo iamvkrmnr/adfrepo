@@ -15,7 +15,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"notebookPath": "/Users/vikram300300@gmail.com/firstnotebook"
+					"notebookPath": "/Users/vikram300300@gmail.com"
 				},
 				"linkedServiceName": {
 					"referenceName": "AzureDatabricks1",
